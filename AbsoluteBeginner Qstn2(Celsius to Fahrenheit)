@@ -1,0 +1,19 @@
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+ //start-here
+  var data=userInput[0].split(" ");
+  var fahrenheit=(data*1.8)+32;
+  console.log(parseFloat(fahrenheit).toFixed(2));
+ //end-here
+});
