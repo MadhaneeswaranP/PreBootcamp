@@ -1,0 +1,31 @@
+// Getting input via STDIN
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  //start-here
+  //Your code goes here … replace the below line with your code logic 
+  var data=userInput[0];
+  var factorial=1;
+  if(data>1)
+  {
+      for(var i=data;i>1;i--)
+      {
+      factorial=factorial*i;
+      }
+  }
+  else
+    console.log(1);
+  console.log(factorial);
+
+  //end-here
+});
