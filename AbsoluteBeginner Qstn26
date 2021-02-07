@@ -1,0 +1,38 @@
+// Getting input via STDIN
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  //start-here
+  //Your code goes here … replace the below line with your code logic 
+
+  let num=userInput[0];
+  let a=num.length;
+  let even="";
+  let odd="";
+  let arr=[];
+  for(let i=0;i<a;i++)
+  {
+      arr.push(num[i]);
+  }
+  arr.sort();
+  for(let i=0;i<a;i++)
+  {
+    if(arr[i]%2===0) 
+      even=even+arr[i]+" ";
+    else if(arr[i]%2!==0)
+      odd=odd+arr[i]+" ";
+  }
+  console.log(even.trim());
+  console.log(odd.trim());
+  //end-here
+});
