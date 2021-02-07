@@ -1,0 +1,27 @@
+// Getting input via STDIN
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  //start-here
+  //Your code goes here … replace the below line with your code logic 
+  let num=userInput[0];
+  let sum=0,rem;
+  while(num>0)
+  {
+    rem = num%10;
+    sum = sum+rem;
+    num = parseInt(num/10);
+  }
+  console.log(parseInt(sum));
+  //end-here
+});
