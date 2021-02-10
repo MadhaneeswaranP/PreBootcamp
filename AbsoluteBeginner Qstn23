@@ -1,0 +1,39 @@
+// Getting input via STDIN
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  //start-here
+  //Your code goes here … replace the below line with your code logic 
+  let n=userInput[0].split(" ");
+  let a=parseInt(n[0]);
+  let b=parseInt(n[1]);
+  let c=parseInt(n[2]);
+  let d=b*b-4*a*c;
+  let r1,r2;
+  if(d>0){
+    r1=(-b + Math.sqrt(d))/(2*a);
+    r2=(-b - Math.sqrt(d))/(2*a);
+    console.log(r1.toFixed(2));
+    console.log(r2.toFixed(2));
+  }
+  else if(d===0){
+    r1=r2= -b/(2 * a);
+    console.log(r1.toFixed(2));
+  }
+  else{
+    let rp= -b/(2 * a);
+    let ip= Math.sqrt(-d)/(2*a);
+    console.log(rp+ip,rp-ip);
+  }
+  //end-here
+});
